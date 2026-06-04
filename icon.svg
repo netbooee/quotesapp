@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <!-- Warm parchment backdrop, matching the app theme -->
+    <radialGradient id="bg" cx="32%" cy="26%" r="85%">
+      <stop offset="0%" stop-color="#f7ecd2"/>
+      <stop offset="55%" stop-color="#eddcb6"/>
+      <stop offset="100%" stop-color="#d8c08c"/>
+    </radialGradient>
+    <linearGradient id="bodyTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4631"/>
+      <stop offset="100%" stop-color="#3d2f1f"/>
+    </linearGradient>
+    <linearGradient id="bodyBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3927"/>
+      <stop offset="100%" stop-color="#2c2113"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#f1e6cf"/>
+    </linearGradient>
+    <radialGradient id="vign" cx="50%" cy="50%" r="62%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#5a4220" stop-opacity="0.28"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded-square background (iOS masks corners itself, but this looks good everywhere) -->
+  <rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
+  <rect width="1024" height="1024" rx="220" fill="url(#vign)"/>
+
+  <!-- Sheet of paper rising out of the platen -->
+  <g>
+    <rect x="356" y="150" width="312" height="300" rx="10" fill="url(#paper)" stroke="#cdbb93" stroke-width="3"/>
+    <!-- Typed lines of text -->
+    <g fill="#6b5d44">
+      <rect x="392" y="206" width="240" height="13" rx="6"/>
+      <rect x="392" y="250" width="200" height="13" rx="6"/>
+      <rect x="392" y="294" width="232" height="13" rx="6"/>
+      <rect x="392" y="338" width="150" height="13" rx="6"/>
+    </g>
+  </g>
+
+  <!-- Platen (roller) -->
+  <g>
+    <rect x="300" y="420" width="424" height="78" rx="39" fill="#2b2114"/>
+    <circle cx="300" cy="459" r="46" fill="#3a2c1b" stroke="#241a0f" stroke-width="6"/>
+    <circle cx="724" cy="459" r="46" fill="#3a2c1b" stroke="#241a0f" stroke-width="6"/>
+    <circle cx="300" cy="459" r="16" fill="#1d150c"/>
+    <circle cx="724" cy="459" r="16" fill="#1d150c"/>
+  </g>
+
+  <!-- Main body -->
+  <path d="M236 470
+           h552
+           a40 40 0 0 1 38 28
+           l44 196
+           a44 44 0 0 1 -43 54
+           H197
+           a44 44 0 0 1 -43 -54
+           l44 -196
+           a40 40 0 0 1 38 -28 Z"
+        fill="url(#bodyTop)"/>
+
+  <!-- Body front face with slight base shade -->
+  <path d="M170 700
+           h684
+           a40 40 0 0 1 39 50
+           l-10 44
+           a44 44 0 0 1 -43 34
+           H184
+           a44 44 0 0 1 -43 -34
+           l-10 -44
+           a40 40 0 0 1 39 -50 Z"
+        fill="url(#bodyBase)"/>
+
+  <!-- Type bars / mechanism hint behind keys -->
+  <g stroke="#1f1710" stroke-width="9" stroke-linecap="round" opacity="0.6">
+    <line x1="430" y1="540" x2="468" y2="500"/>
+    <line x1="512" y1="548" x2="512" y2="498"/>
+    <line x1="594" y1="540" x2="556" y2="500"/>
+  </g>
+
+  <!-- Keyboard: three rows of round keys -->
+  <g>
+    <!-- helper rows generated below -->
+    <g fill="#efe6d2" stroke="#241a0f" stroke-width="5">
+      <!-- Row 1 -->
+      <circle cx="276" cy="744" r="26"/>
+      <circle cx="346" cy="744" r="26"/>
+      <circle cx="416" cy="744" r="26"/>
+      <circle cx="486" cy="744" r="26"/>
+      <circle cx="556" cy="744" r="26"/>
+      <circle cx="626" cy="744" r="26"/>
+      <circle cx="696" cy="744" r="26"/>
+      <circle cx="766" cy="744" r="26"/>
+      <!-- Row 2 -->
+      <circle cx="311" cy="812" r="26"/>
+      <circle cx="381" cy="812" r="26"/>
+      <circle cx="451" cy="812" r="26"/>
+      <circle cx="521" cy="812" r="26"/>
+      <circle cx="591" cy="812" r="26"/>
+      <circle cx="661" cy="812" r="26"/>
+      <circle cx="731" cy="812" r="26"/>
+    </g>
+  </g>
+
+  <!-- Spacebar -->
+  <rect x="356" y="864" width="312" height="34" rx="17" fill="#efe6d2" stroke="#241a0f" stroke-width="5"/>
+
+  <!-- Soft top highlight on parchment -->
+  <rect width="1024" height="1024" rx="220" fill="url(#vign)" opacity="0.0"/>
+</svg>

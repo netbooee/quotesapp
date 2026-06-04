@@ -29,6 +29,24 @@ date (`EPOCH`) plus a deterministic scramble across the `QUOTES` array.
 | `app.js`      | Date → quote logic and day-selector interaction  |
 | `quotes.js`   | The curated quote collection                     |
 | `netlify.toml`| Static-site config + security headers            |
+| `icon.svg`    | Source vector for the old-typewriter app icon    |
+| `apple-touch-icon*.png` | iOS Home Screen icons (Apple masks corners) |
+| `icon-192/512.png`, `favicon-32.png` | Web manifest + favicon icons |
+| `manifest.webmanifest` | "Add to Home Screen" / PWA metadata     |
+
+## App icon
+
+The Home Screen icon is an old typewriter on parchment, matching the app's
+look. The vector source is `icon.svg`; the PNG sizes are generated from it
+with [sharp](https://sharp.pixelplumbing.com):
+
+```bash
+node -e "/* see commit history for the generation snippet */"
+```
+
+When you "Add to Home Screen" on iOS, Safari uses `apple-touch-icon.png`
+(180×180, full-bleed — iOS rounds the corners itself) and the
+`apple-mobile-web-app-title` of **Daily Wisdom**.
 
 ## Running locally
 
