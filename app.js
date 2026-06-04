@@ -17,9 +17,12 @@
   var nextBtn = document.getElementById("nextDay");
   var todayBtn = document.getElementById("todayBtn");
 
-  // Normalize a Date to midnight UTC so day math ignores local time-of-day.
-  function startOfUTCDay(d) {
-    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  // Map a Date to its LOCAL calendar date, encoded as a UTC-midnight
+  // timestamp. Using the local Y/M/D (not the UTC ones) means the "today"
+  // shown matches the viewer's actual date, regardless of timezone; encoding
+  // it as UTC midnight keeps day-number math and UTC-based formatting aligned.
+  function calendarDayMs(d) {
+    return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate());
   }
 
   // Whole days between EPOCH and the given date (can be negative pre-epoch).
@@ -46,7 +49,7 @@
     });
   }
 
-  var todayDay = dayNumber(startOfUTCDay(new Date()));
+  var todayDay = dayNumber(calendarDayMs(new Date()));
   var selectedDay = todayDay;
 
   function renderQuote(day) {
