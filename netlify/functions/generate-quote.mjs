@@ -35,16 +35,16 @@ const SYSTEM_PROMPT =
   "You are a writer of original, deep, and meaningful quotes in the spirit of " +
   "history's great philosophers, thinkers, and leaders. Write ORIGINAL wisdom " +
   "— never copy or paraphrase an existing famous quote, and never attribute it " +
-  "to a real person. Each quote must be exactly two sentences: motivational, " +
-  "inspiring, or productivity-minded, and genuinely thoughtful rather than " +
-  "clichéd. Keep it concise and timeless.";
+  "to a real person. Be SHORT and punchy: one or two sentences, 30 words " +
+  "maximum, and aim for under 20. Make every word earn its place — concise, " +
+  "timeless, and motivational, inspiring, or productivity-minded.";
 
 // Constrain the model to clean JSON. Structured outputs also keeps the
 // (thinking-disabled) model from prepending any reasoning to the answer.
 const OUTPUT_SCHEMA = {
   type: "object",
   properties: {
-    text: { type: "string", description: "The two-sentence quote." },
+    text: { type: "string", description: "The short quote: one or two sentences, 30 words max." },
   },
   required: ["text"],
   additionalProperties: false,
@@ -89,7 +89,7 @@ export const handler = async (event) => {
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 512,
+        max_tokens: 128,
         system: SYSTEM_PROMPT,
         output_config: {
           format: { type: "json_schema", schema: OUTPUT_SCHEMA },
@@ -98,9 +98,9 @@ export const handler = async (event) => {
           {
             role: "user",
             content:
-              "Write one original two-sentence quote about " +
+              "Write one short, original quote about " +
               theme +
-              ". Surprise me with a fresh angle.",
+              " — one or two sentences, 30 words max. Surprise me with a fresh angle.",
           },
         ],
       }),
