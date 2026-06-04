@@ -248,9 +248,66 @@ body {
   display: none;
 }
 
+/* ---------- Action buttons ---------- */
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.action-btn {
+  font-family: "Cutive Mono", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid #5c4a2c;
+  background: rgba(243, 228, 195, 0.92);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.action-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #f7ecd2;
+}
+
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.action-btn--ai {
+  background: linear-gradient(135deg, #6b4f8a 0%, #43607f 100%);
+  color: #f3e9d2;
+  border-color: #3a2c4a;
+}
+
+.action-btn--ai:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7a5b9c 0%, #4d6e91 100%);
+}
+
+.action-btn--ai.is-loading {
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* ---------- Footer ---------- */
 .page__footer {
-  margin-top: 2.25rem;
+  margin-top: 1.5rem;
 }
 
 .today-btn {

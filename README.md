@@ -13,12 +13,42 @@ tech leaders (Steve Jobs, Bill Gates, Marcus Aurelius, Maya Angelou, and more).
 Each calendar date is mapped to a quote **deterministically** — the same date
 always yields the same quote, for every visitor. This means:
 
-- No backend, database, or API key is required.
+- No backend, database, or API key is required for the daily quote.
 - "Browsing the past" is consistent: yesterday's quote is always yesterday's.
 - You can't browse into the future (the day selector stops at today).
+- "Today" uses the **viewer's local date**, so it's correct in every timezone.
 
 The mapping lives in `app.js` (`quoteIndexForDay`) and uses a fixed reference
-date (`EPOCH`) plus a deterministic scramble across the `QUOTES` array.
+date (`EPOCH`) plus a deterministic **shuffled permutation** of the `QUOTES`
+array. Walking the permutation by day number means every quote appears exactly
+once before any repeats — so with 372 quotes, **every day of a 365-day year is
+unique**.
+
+## Buttons
+
+- **🎲 Random Quote** — draws a random quote from the library, independent of
+  the date. Pure client-side; no network call.
+- **✨ Generate with AI** — calls a Netlify serverless function that asks Claude
+  to compose a fresh, original two-sentence quote. See setup below.
+- **Return to Today** — snaps back to today's daily quote.
+
+## AI-generated quotes (optional)
+
+The AI button calls `netlify/functions/generate-quote.mjs`, which hits the
+Anthropic Messages API. To enable it on your deployed site:
+
+1. Get an API key from the [Anthropic Console](https://console.anthropic.com).
+2. In Netlify: **Site configuration → Environment variables** → add
+   `ANTHROPIC_API_KEY` = your key.
+3. Redeploy. The button now returns a freshly generated quote.
+
+Notes:
+- The function uses the `claude-opus-4-8` model and has a per-request cost.
+  To lower cost, change `MODEL` in the function to `claude-haiku-4-5`.
+- If the key isn't set, the daily and random buttons still work; the AI button
+  shows a friendly "unavailable" message.
+- The function bundles with zero dependencies (it uses `fetch` directly), so
+  there's still nothing to build.
 
 ## Project structure
 
