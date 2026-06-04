@@ -90,7 +90,7 @@ const QUOTES = [
   },
   {
     text: "The future belongs to those who believe in the beauty of their dreams.",
-    author: "Eleanor Roosevelt",
+    author: null,
   },
   {
     text: "No one can make you feel inferior without your consent. You must do the thing you think you cannot do.",
@@ -114,7 +114,7 @@ const QUOTES = [
   },
   {
     text: "Be the change that you wish to see in the world.",
-    author: "Mahatma Gandhi",
+    author: null,
   },
   {
     text: "Live as if you were to die tomorrow. Learn as if you were to live forever.",
@@ -214,7 +214,7 @@ const QUOTES = [
   },
   {
     text: "Quality is not an act, it is a habit.",
-    author: "Aristotle",
+    author: null,
   },
   {
     text: "Few things help an individual more than to place responsibility upon him, and to let him know that you trust him.",
@@ -226,7 +226,7 @@ const QUOTES = [
   },
   {
     text: "Integrity is doing the right thing, even when no one is watching.",
-    author: "C.S. Lewis",
+    author: null,
   },
   {
     text: "The most difficult thing is the decision to act, the rest is merely tenacity.",
@@ -330,7 +330,7 @@ const QUOTES = [
   },
   {
     text: "Be so good they can't ignore you.",
-    author: "Cal Newport",
+    author: "Steve Martin",
   },
 
   // ----- Stoics & ancient philosophy -----
@@ -392,7 +392,7 @@ const QUOTES = [
   },
   {
     text: "Knowing yourself is the beginning of all wisdom.",
-    author: "Aristotle",
+    author: null,
   },
   {
     text: "If you have a garden and a library, you have everything you need.",
@@ -1148,7 +1148,7 @@ const QUOTES = [
   },
   {
     text: "Wherever you go, go with all your heart.",
-    author: "Confucius",
+    author: null,
   },
   {
     text: "The superior man is modest in his speech but exceeds in his actions.",
@@ -1156,7 +1156,7 @@ const QUOTES = [
   },
   {
     text: "Choose a job you love, and you will never have to work a day in your life.",
-    author: "Confucius",
+    author: null,
   },
   {
     text: "To know what is right and not to do it is the worst cowardice.",
@@ -1234,7 +1234,7 @@ const QUOTES = [
   },
   {
     text: "Everything you've ever wanted is on the other side of fear.",
-    author: "George Addair",
+    author: null,
   },
   {
     text: "Don't be pushed around by the fears in your mind; be led by the dreams in your heart.",
@@ -1392,7 +1392,7 @@ const QUOTES = [
   },
   {
     text: "Comparison is the thief of joy.",
-    author: "Theodore Roosevelt",
+    author: null,
   },
   {
     text: "It is not the critic who counts; the credit belongs to the one who is actually in the arena, whose face is marred by dust and sweat and blood.",
@@ -1400,7 +1400,7 @@ const QUOTES = [
   },
   {
     text: "Order your soul; reduce your wants.",
-    author: "Saint Augustine",
+    author: null,
   },
   {
     text: "You cannot swim for new horizons until you have courage to lose sight of the shore.",
@@ -1488,7 +1488,7 @@ const QUOTES = [
   },
   {
     text: "The two most powerful warriors are patience and time.",
-    author: null,
+    author: "Leo Tolstoy",
   },
   {
     text: "Wherever you are, be all there.",
