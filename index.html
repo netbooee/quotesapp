@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Wisdom — A Quote a Day</title>
+    <meta
+      name="description"
+      content="A deep, meaningful two-sentence quote for every day. Browse the past for daily inspiration, motivation, and productivity wisdom."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cutive+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <h1 class="masthead__title">Daily Wisdom</h1>
+        <p class="masthead__subtitle">A meaningful quote for every day</p>
+      </header>
+
+      <nav class="day-selector" aria-label="Browse quotes by day">
+        <button
+          class="day-nav day-nav--prev"
+          id="prevDay"
+          type="button"
+          aria-label="Previous day"
+        >
+          &#8592;
+        </button>
+
+        <div class="day-strip" id="dayStrip" role="tablist"></div>
+
+        <button
+          class="day-nav day-nav--next"
+          id="nextDay"
+          type="button"
+          aria-label="Next day"
+        >
+          &#8594;
+        </button>
+      </nav>
+
+      <section class="parchment-wrap">
+        <article class="parchment" id="parchment" aria-live="polite">
+          <p class="parchment__date" id="quoteDate"></p>
+          <blockquote class="parchment__quote" id="quoteText"></blockquote>
+          <p class="parchment__author" id="quoteAuthor"></p>
+        </article>
+      </section>
+
+      <footer class="page__footer">
+        <button class="today-btn" id="todayBtn" type="button">
+          Return to Today
+        </button>
+      </footer>
+    </main>
+
+    <script src="quotes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
