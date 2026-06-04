@@ -9,7 +9,7 @@
 // Netlify site settings (Site configuration → Environment variables).
 
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
-const MODEL = "claude-opus-4-8"; // swap to "claude-haiku-4-5" for lower cost
+const MODEL = "claude-haiku-4-5"; // fast + low cost; bump to a larger model for richer quotes
 
 // A little variety so repeated clicks don't converge on the same theme.
 const THEMES = [

@@ -43,8 +43,9 @@ Anthropic Messages API. To enable it on your deployed site:
 3. Redeploy. The button now returns a freshly generated quote.
 
 Notes:
-- The function uses the `claude-opus-4-8` model and has a per-request cost.
-  To lower cost, change `MODEL` in the function to `claude-haiku-4-5`.
+- The function uses the fast, low-cost `claude-haiku-4-5` model. For richer,
+  more nuanced quotes, change `MODEL` in the function to `claude-opus-4-8`
+  (higher per-request cost).
 - If the key isn't set, the daily and random buttons still work; the AI button
   shows a friendly "unavailable" message.
 - The function bundles with zero dependencies (it uses `fetch` directly), so
