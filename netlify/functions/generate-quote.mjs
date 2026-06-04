@@ -35,16 +35,16 @@ const SYSTEM_PROMPT =
   "You are a writer of original, deep, and meaningful quotes in the spirit of " +
   "history's great philosophers, thinkers, and leaders. Write ORIGINAL wisdom " +
   "— never copy or paraphrase an existing famous quote, and never attribute it " +
-  "to a real person. Be SHORT and punchy: one or two sentences, 30 words " +
-  "maximum, and aim for under 20. Make every word earn its place — concise, " +
-  "timeless, and motivational, inspiring, or productivity-minded.";
+  "to a real person. Write EXACTLY ONE sentence — a single sentence, 25 words " +
+  "maximum, ending with one period and no more. Make every word earn its " +
+  "place — concise, timeless, and motivational, inspiring, or productivity-minded.";
 
 // Constrain the model to clean JSON. Structured outputs also keeps the
 // (thinking-disabled) model from prepending any reasoning to the answer.
 const OUTPUT_SCHEMA = {
   type: "object",
   properties: {
-    text: { type: "string", description: "The short quote: one or two sentences, 30 words max." },
+    text: { type: "string", description: "The quote: exactly one sentence, 25 words max." },
   },
   required: ["text"],
   additionalProperties: false,
@@ -100,7 +100,7 @@ export const handler = async (event) => {
             content:
               "Write one short, original quote about " +
               theme +
-              " — one or two sentences, 30 words max. Surprise me with a fresh angle.",
+              " — a single sentence, 25 words max. Surprise me with a fresh angle.",
           },
         ],
       }),
